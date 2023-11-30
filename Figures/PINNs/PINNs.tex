@@ -87,9 +87,12 @@
     \draw[SDBox3] (SD3ll) rectangle (Dtr);
     \draw[DBox] (Dll) rectangle (Dtr);
     % Embedded Figures
-    \node[empty] (fig1) at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, 0.05*\ly)$) {\includegraphics[width=0.27\textwidth]{Figures/bed.pdf}};
-    \node[empty] (fig2) at ($(SD2ll)!0.5!(SD2tr)+(0, 0.05*\ly)$) {\includegraphics[width=0.27\textwidth]{Figures/bed.pdf}};
-    \node[empty] (fig3) at ($(SD3ll)!0.5!(Dtr)+(0, 0.05*\ly)$) {\includegraphics[width=0.27\textwidth]{Figures/bed.pdf}};
+    \node[empty] (fig1) at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, 0.05*\ly)$)
+	 {\includegraphics[width=0.27\textwidth]{subfigures/vel.pdf}};
+    \node[empty] (fig2) at ($(SD2ll)!0.5!(SD2tr)+(0, 0.05*\ly)$)
+	 {\includegraphics[width=0.27\textwidth]{subfigures/surface.pdf}};
+    \node[empty] (fig3) at ($(SD3ll)!0.5!(Dtr)+(0, 0.05*\ly)$)
+	 {\includegraphics[width=0.27\textwidth]{subfigures/frictionC.pdf}};
     % Equations
     \small
     \node[empty, scale=0.7] at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, -0.16*\ly)$) {$\mathcal{L}_u=w_{{u}} \|\boldsymbol{u}-\boldsymbol{u}^{\text{obs}}\|_{\boldsymbol{u}}$};
