@@ -88,16 +88,16 @@
     \draw[DBox] (Dll) rectangle (Dtr);
     % Embedded Figures
     \node[empty] (fig1) at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, 0.05*\ly)$)
-	 {\includegraphics[width=0.27\textwidth]{subfigures/vel.pdf}};
+	 {\includegraphics[width=0.21\textwidth]{subfigures/vel.pdf}};
     \node[empty] (fig2) at ($(SD2ll)!0.5!(SD2tr)+(0, 0.05*\ly)$)
-	 {\includegraphics[width=0.27\textwidth]{subfigures/surface.pdf}};
+	 {\includegraphics[width=0.21\textwidth]{subfigures/surface.pdf}};
     \node[empty] (fig3) at ($(SD3ll)!0.5!(Dtr)+(0, 0.05*\ly)$)
-	 {\includegraphics[width=0.27\textwidth]{subfigures/frictionC.pdf}};
+	 {\includegraphics[width=0.21\textwidth]{subfigures/frictionC.pdf}};
     % Equations
     \small
-    \node[empty, scale=0.7] at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, -0.16*\ly)$) {$\mathcal{L}_u=w_{{u}} \|\boldsymbol{u}-\boldsymbol{u}^{\text{obs}}\|_{\boldsymbol{u}}$};
-    \node[empty, scale=0.7] at ($(SD2ll)!0.5!(SD2tr)+(0, -0.16*\ly)$) {$\mathcal{L}_g=w_{{g}}\left( \|{s}-{s}^{\text{obs}}\|_{{s}}+\|{H}-{H}^{\text{obs}}\|_{{H}}\right)$};
-    \node[empty, scale=0.7] at ($(SD3ll)!0.5!(Dtr)+(0, -0.16*\ly)$) {$\mathcal{L}_C=w_{C} \|C-C^{\text{obs}}\|_{C}$};
+    \node[empty, scale=0.7] at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, -0.14*\ly)$) {$\mathcal{L}_u=w_{{u}} \|\boldsymbol{u}-\boldsymbol{u}^{\text{obs}}\|_{\boldsymbol{u}}$};
+    \node[empty, scale=0.7] at ($(SD2ll)!0.5!(SD2tr)+(0, -0.14*\ly)$) {$\mathcal{L}_g=w_{{g}}\left( \|{s}-{s}^{\text{obs}}\|_{{s}}+\|{H}-{H}^{\text{obs}}\|_{{H}}\right)$};
+    \node[empty, scale=0.7] at ($(SD3ll)!0.5!(Dtr)+(0, -0.14*\ly)$) {$\mathcal{L}_C=w_{C} \|C-C^{\text{obs}}\|_{C}$};
     % arrows
     \draw[arrow, color=NavyBlue!90!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(-0.06*\lx,0)$) --  +(0,-0.24*\ly) -| ($(fig1)+(0,0.14*\ly)$);
     \draw[arrow, color=NavyBlue!60!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(0*\lx,0)$) --  +(0,-0.255*\ly) -| ($(fig2)+(0,0.14*\ly)$); 
@@ -108,10 +108,10 @@
     % ============================== Physics ==============================
     \draw[PBox] (Pll) rectangle (Ptr);
     % Equations
-    \node[empty, scale=0.7] (SSA) at ($(Pll)!0.5!(Ptr)+(0,0.05*\ly)$) {$
+    \node[empty, scale=0.7] (SSA) at ($(Pll)!0.5!(Ptr)+(0,0.1*\ly)$) {$
     \begin{cases}
         \begin{aligned}
-            \nabla\cdot\boldsymbol{\varsigma}-\boldsymbol{\tau}_b=\rho_i g H \nabla s, \quad \text{in } \Omega\\
+            \nabla\cdot\boldsymbol{\varsigma}+\boldsymbol{\tau}_b=\rho_i g H \nabla s, \quad \text{in } \Omega\\
             \boldsymbol{n}\cdot\boldsymbol{\varsigma}=(\bar{p}_i-\bar{p}_w)\boldsymbol{n} \quad \text{on } \Gamma
             \end{aligned}
     \end{cases}
