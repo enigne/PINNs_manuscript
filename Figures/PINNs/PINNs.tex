@@ -33,7 +33,7 @@
 % colors
 
 % style
-\tikzset{NNBox/.style={draw,color=OliveGreen,line width=2pt, fill=OliveGreen!20!white}}
+\tikzset{NNBox/.style={draw,color=OliveGreen,line width=2pt, fill=OliveGreen!10!white}}
 \tikzset{PBox/.style={draw,color=Orange,line width=2pt, fill=YellowOrange!20!white}}
 \tikzset{DBox/.style={draw,color=NavyBlue,line width=2pt}}
 \tikzset{SDBox1/.style={fill,color=Black!30!white,line width=-1pt}}
@@ -69,13 +69,16 @@
     \node[empty] (figNN) at ($(Nll)!0.5!(Ntr)+(-0.22*\lx, -0.03*\ly)$) 
     {\includegraphics[width=0.65\textwidth]{NNs.pdf}};
     % text
-    \node[empty, color=OliveGreen, scale=0.8] (NNtext) at ($(figNN)+(0,0.24*\ly)$) {Neural Network};
+	 \Large
+    \node[empty, color=OliveGreen, scale=1] (NNtext) at ($(figNN)+(0,0.24*\ly)$) {Neural Network};
+	 \large
     \node[empty, color=OliveGreen, scale=0.8] (update) at ($(figNN)+(0.35*\lx,0.24*\ly)$) {Update the weights};
-    \node[empty, color=OliveGreen, scale=0.8] (Optimization) at ($(figNN)+(0.65*\lx,0.1*\ly)$) {Optimization};
+    \node[empty, color=OliveGreen, scale=0.8] (Optimization) at ($(figNN)+(0.64*\lx,0.1*\ly)$) {Optimization};
     \node[empty, color=OliveGreen, scale=0.8] (Loss) at ($(figNN)+(0.4*\lx,0.06*\ly)$) {Loss Function};
     % Equations
+	 \large
     \node[empty] (Lossmath) at ($(figNN)+(0.4*\lx,0*\ly)$) {$\mathcal{L}=\mathcal{L}_u+\mathcal{L}_g+\mathcal{L}_C+\mathcal{L}_f$};
-    \node[empty, yscale=8] (case) at ($(figNN)+(0.26*\lx,0*\ly)$) {$\}$};
+    \node[empty, yscale=8] (case) at ($(figNN)+(0.25*\lx,0*\ly)$) {$\}$};
     % arrows
     \draw[arrow, color=OliveGreen,  to path={-| (\tikztotarget)}] (Lossmath) edge (Optimization) ;
     \draw[arrow, color=OliveGreen,  to path={|- (\tikztotarget)}] (Optimization) edge (update);
@@ -94,19 +97,26 @@
     \node[empty] (fig3) at ($(SD3ll)!0.5!(Dtr)+(0, 0.05*\ly)$)
 	 {\includegraphics[width=0.21\textwidth]{subfigures/frictionC.pdf}};
     % Equations
+    \normalsize
+    \node[empty, scale=0.7] at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, -0.14*\ly)$)
+	 {$\mathcal{L}_u=w_{{u}} \|\boldsymbol{u}-\boldsymbol{u}^{\text{obs}}\|^2_{\boldsymbol{u}}$};
     \small
-    \node[empty, scale=0.7] at ($(SD1ll)!0.5!(SD1tr)+(0.015*\lx, -0.14*\ly)$) {$\mathcal{L}_u=w_{{u}} \|\boldsymbol{u}-\boldsymbol{u}^{\text{obs}}\|_{\boldsymbol{u}}$};
-    \node[empty, scale=0.7] at ($(SD2ll)!0.5!(SD2tr)+(0, -0.14*\ly)$) {$\mathcal{L}_g=w_{{g}}\left( \|{s}-{s}^{\text{obs}}\|_{{s}}+\|{H}-{H}^{\text{obs}}\|_{{H}}\right)$};
-    \node[empty, scale=0.7] at ($(SD3ll)!0.5!(Dtr)+(0, -0.14*\ly)$) {$\mathcal{L}_C=w_{C} \|C-C^{\text{obs}}\|_{C}$};
+    \node[empty, scale=0.7] at ($(SD2ll)!0.5!(SD2tr)+(0, -0.14*\ly)$) {$\mathcal{L}_g=w_{{g}}\left(
+	 \|{s}-{s}^{\text{obs}}\|^2_{{s}}+\|{H}-{H}^{\text{obs}}\|^2_{{H}}\right)$};
+    \normalsize
+    \node[empty, scale=0.7] at ($(SD3ll)!0.5!(Dtr)+(0, -0.14*\ly)$) {$\mathcal{L}_C=w_{C}
+	 \|C-C^{\text{obs}}\|^2_{C}$};
     % arrows
-    \draw[arrow, color=NavyBlue!90!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(-0.06*\lx,0)$) --  +(0,-0.24*\ly) -| ($(fig1)+(0,0.14*\ly)$);
+    \draw[arrow, color=NavyBlue!90!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(-0.065*\lx,0)$) --  +(0,-0.24*\ly) -| ($(fig1)+(0,0.14*\ly)$);
     \draw[arrow, color=NavyBlue!60!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(0*\lx,0)$) --  +(0,-0.255*\ly) -| ($(fig2)+(0,0.14*\ly)$); 
-    \draw[arrow, color=NavyBlue!30!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(0.05*\lx,0)$) --  +(0,-0.27*\ly) -| ($(fig3)+(0,0.14*\ly)$);
+    \draw[arrow, color=NavyBlue!30!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(0.055*\lx,0)$) --  +(0,-0.27*\ly) -| ($(fig3)+(0,0.14*\ly)$);
     % text
+	 \Large
     \node[empty, color=NavyBlue,rotate=90] (SDtext) at ($(fig1)+(-0.13*\lx,0)$) {Data};
 
     % ============================== Physics ==============================
     \draw[PBox] (Pll) rectangle (Ptr);
+	 \normalsize
     % Equations
     \node[empty, scale=0.7] (SSA) at ($(Pll)!0.5!(Ptr)+(0,0.1*\ly)$) {$
     \begin{cases}
@@ -119,8 +129,9 @@
     \node[empty, scale=0.8] at  ($(Pll)!0.5!(Ptr)+(0,-0.1*\ly)$) {$\mathcal{L}_f=w_{\Omega}\mathcal{L}_\Omega+w_{\Gamma}\mathcal{L}_\Gamma$};
 
     % arrow
-    \draw[arrow, color=Orange!30!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(0.1*\lx,0)$) --  +(0,-0.25*\ly) -| ($(Pll)!0.5!(Ptr)+(0,0.19*\ly)$);
+    \draw[arrow, color=Orange!30!white, to path={|- (\tikztotarget)}] ($(Lossmath)+(0.12*\lx,0)$) --  +(0,-0.25*\ly) -| ($(Pll)!0.5!(Ptr)+(0,0.19*\ly)$);
     % text
+	 \Large
     \node[empty, color=Orange] (Ptext) at ($(Pll)!0.5!(Ptr)+(0, -0.18*\ly)$) {Physics};
 
 \end{tikzpicture}
